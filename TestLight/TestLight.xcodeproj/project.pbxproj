@@ -13,6 +13,8 @@
 		9676599F1FC516B600383678 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9676599D1FC516B600383678 /* LaunchScreen.storyboard */; };
 		967659AA1FC516B600383678 /* TestLightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967659A91FC516B600383678 /* TestLightTests.swift */; };
 		967659B51FC516B600383678 /* TestLightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967659B41FC516B600383678 /* TestLightUITests.swift */; };
+		967659C41FC55EDF00383678 /* AlgnorithmVCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967659C31FC55EDF00383678 /* AlgnorithmVCtrl.swift */; };
+		967659C71FC55F0500383678 /* FunctionVCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967659C61FC55F0500383678 /* FunctionVCtrl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		967659B01FC516B600383678 /* TestLightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestLightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		967659B41FC516B600383678 /* TestLightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLightUITests.swift; sourceTree = "<group>"; };
 		967659B61FC516B600383678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		967659C31FC55EDF00383678 /* AlgnorithmVCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgnorithmVCtrl.swift; sourceTree = "<group>"; };
+		967659C61FC55F0500383678 /* FunctionVCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionVCtrl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 		967659931FC516B600383678 /* TestLight */ = {
 			isa = PBXGroup;
 			children = (
+				967659C51FC55EFD00383678 /* Function */,
+				967659C21FC55ED000383678 /* Algnorithm */,
 				967659941FC516B600383678 /* AppDelegate.swift */,
 				967659981FC516B600383678 /* Main.storyboard */,
 				9676599B1FC516B600383678 /* Assets.xcassets */,
@@ -120,6 +126,22 @@
 				967659B61FC516B600383678 /* Info.plist */,
 			);
 			path = TestLightUITests;
+			sourceTree = "<group>";
+		};
+		967659C21FC55ED000383678 /* Algnorithm */ = {
+			isa = PBXGroup;
+			children = (
+				967659C31FC55EDF00383678 /* AlgnorithmVCtrl.swift */,
+			);
+			path = Algnorithm;
+			sourceTree = "<group>";
+		};
+		967659C51FC55EFD00383678 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				967659C61FC55F0500383678 /* FunctionVCtrl.swift */,
+			);
+			path = Function;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967659C41FC55EDF00383678 /* AlgnorithmVCtrl.swift in Sources */,
 				967659951FC516B600383678 /* AppDelegate.swift in Sources */,
+				967659C71FC55F0500383678 /* FunctionVCtrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
