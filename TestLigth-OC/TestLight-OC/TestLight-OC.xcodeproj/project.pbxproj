@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31582A0CDDE6969A97CBC472 /* Pods_TestLight_OC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B990C5AE2C69B63F6427C8 /* Pods_TestLight_OC.framework */; };
+		9634D82820D360B5000423C0 /* RoundaboutVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634D82720D360B5000423C0 /* RoundaboutVCtrl.m */; };
+		9634D82D20D39B41000423C0 /* RoundaboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634D82C20D39B41000423C0 /* RoundaboutView.m */; };
+		9634D83020D3A562000423C0 /* PrizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9634D82F20D3A562000423C0 /* PrizeView.m */; };
 		965EB4372004B55800FF5ADB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 965EB4362004B55800FF5ADB /* AppDelegate.m */; };
 		965EB43D2004B55800FF5ADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965EB43B2004B55800FF5ADB /* Main.storyboard */; };
 		965EB43F2004B55800FF5ADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 965EB43E2004B55800FF5ADB /* Assets.xcassets */; };
@@ -48,9 +52,18 @@
 		965EB4C42004B94500FF5ADB /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 965EB4A02004B94500FF5ADB /* NSDictionary+RequestEncoding.m */; };
 		965EB4C52004B94500FF5ADB /* NSAlert+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 965EB4A22004B94500FF5ADB /* NSAlert+MKNetworkKitAdditions.m */; };
 		965EB4C62004B94500FF5ADB /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = 965EB4A32004B94500FF5ADB /* NSDate+RFC1123.m */; };
+		96FD968320634AED0099DA96 /* EmitterVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FD968220634AED0099DA96 /* EmitterVCtrl.m */; };
+		96FEE52B208F7F6C00760CA3 /* ClickMenuVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FEE52A208F7F6C00760CA3 /* ClickMenuVCtrl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24235A3DBCEF89E9A67FCFB2 /* Pods-TestLight-OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestLight-OC.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestLight-OC/Pods-TestLight-OC.release.xcconfig"; sourceTree = "<group>"; };
+		9634D82620D360B5000423C0 /* RoundaboutVCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundaboutVCtrl.h; sourceTree = "<group>"; };
+		9634D82720D360B5000423C0 /* RoundaboutVCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundaboutVCtrl.m; sourceTree = "<group>"; };
+		9634D82B20D39B41000423C0 /* RoundaboutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundaboutView.h; sourceTree = "<group>"; };
+		9634D82C20D39B41000423C0 /* RoundaboutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundaboutView.m; sourceTree = "<group>"; };
+		9634D82E20D3A562000423C0 /* PrizeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrizeView.h; sourceTree = "<group>"; };
+		9634D82F20D3A562000423C0 /* PrizeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrizeView.m; sourceTree = "<group>"; };
 		965EB4322004B55800FF5ADB /* TestLight-OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TestLight-OC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		965EB4352004B55800FF5ADB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		965EB4362004B55800FF5ADB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -133,6 +146,12 @@
 		965EB4A32004B94500FF5ADB /* NSDate+RFC1123.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RFC1123.m"; sourceTree = "<group>"; };
 		965EB4A42004B94500FF5ADB /* NSString+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
 		965EB4A52004B94500FF5ADB /* MKNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
+		96FD968120634AED0099DA96 /* EmitterVCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmitterVCtrl.h; sourceTree = "<group>"; };
+		96FD968220634AED0099DA96 /* EmitterVCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmitterVCtrl.m; sourceTree = "<group>"; };
+		96FEE529208F7F6C00760CA3 /* ClickMenuVCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickMenuVCtrl.h; sourceTree = "<group>"; };
+		96FEE52A208F7F6C00760CA3 /* ClickMenuVCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClickMenuVCtrl.m; sourceTree = "<group>"; };
+		A3B990C5AE2C69B63F6427C8 /* Pods_TestLight_OC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestLight_OC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF80090FB77DF1A945DDF99C /* Pods-TestLight-OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestLight-OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestLight-OC/Pods-TestLight-OC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,17 +159,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31582A0CDDE6969A97CBC472 /* Pods_TestLight_OC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2600D5C7199A0F62DB2F49AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3B990C5AE2C69B63F6427C8 /* Pods_TestLight_OC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92A02D95F8AAB330513BD611 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF80090FB77DF1A945DDF99C /* Pods-TestLight-OC.debug.xcconfig */,
+				24235A3DBCEF89E9A67FCFB2 /* Pods-TestLight-OC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9634D82520D3609E000423C0 /* Roundabout */ = {
+			isa = PBXGroup;
+			children = (
+				9634D82620D360B5000423C0 /* RoundaboutVCtrl.h */,
+				9634D82720D360B5000423C0 /* RoundaboutVCtrl.m */,
+				9634D82B20D39B41000423C0 /* RoundaboutView.h */,
+				9634D82C20D39B41000423C0 /* RoundaboutView.m */,
+				9634D82E20D3A562000423C0 /* PrizeView.h */,
+				9634D82F20D3A562000423C0 /* PrizeView.m */,
+			);
+			path = Roundabout;
+			sourceTree = "<group>";
+		};
 		965EB4292004B55800FF5ADB = {
 			isa = PBXGroup;
 			children = (
 				965EB4342004B55800FF5ADB /* TestLight-OC */,
 				965EB4332004B55800FF5ADB /* Products */,
+				92A02D95F8AAB330513BD611 /* Pods */,
+				2600D5C7199A0F62DB2F49AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +217,9 @@
 		965EB4342004B55800FF5ADB /* TestLight-OC */ = {
 			isa = PBXGroup;
 			children = (
+				9634D82520D3609E000423C0 /* Roundabout */,
+				96FEE528208F7F6100760CA3 /* ClickMenu */,
+				96FD968020634ADF0099DA96 /* EmitterVCtrl */,
 				965EB4572004B94500FF5ADB /* CollectionViewEditVCtrl */,
 				965EB4672004B94500FF5ADB /* ThirdLibs */,
 				965EB4532004B62600FF5ADB /* MainMenuVCtrl */,
@@ -362,6 +417,24 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		96FD968020634ADF0099DA96 /* EmitterVCtrl */ = {
+			isa = PBXGroup;
+			children = (
+				96FD968120634AED0099DA96 /* EmitterVCtrl.h */,
+				96FD968220634AED0099DA96 /* EmitterVCtrl.m */,
+			);
+			path = EmitterVCtrl;
+			sourceTree = "<group>";
+		};
+		96FEE528208F7F6100760CA3 /* ClickMenu */ = {
+			isa = PBXGroup;
+			children = (
+				96FEE529208F7F6C00760CA3 /* ClickMenuVCtrl.h */,
+				96FEE52A208F7F6C00760CA3 /* ClickMenuVCtrl.m */,
+			);
+			path = ClickMenu;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -369,9 +442,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 965EB4482004B55800FF5ADB /* Build configuration list for PBXNativeTarget "TestLight-OC" */;
 			buildPhases = (
+				694DBB590C44414B59623BC8 /* [CP] Check Pods Manifest.lock */,
 				965EB42E2004B55800FF5ADB /* Sources */,
 				965EB42F2004B55800FF5ADB /* Frameworks */,
 				965EB4302004B55800FF5ADB /* Resources */,
+				53BE44D9C991DA78E7223DE6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -393,7 +468,7 @@
 				TargetAttributes = {
 					965EB4312004B55800FF5ADB = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -430,6 +505,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		53BE44D9C991DA78E7223DE6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TestLight-OC/Pods-TestLight-OC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupKit/PopupKit.framework",
+				"${BUILT_PRODUCTS_DIR}/QMUIKit/QMUIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
+				"${BUILT_PRODUCTS_DIR}/ZZCircleProgress/ZZCircleProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QMUIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZZCircleProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestLight-OC/Pods-TestLight-OC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		694DBB590C44414B59623BC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestLight-OC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		965EB42E2004B55800FF5ADB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -452,18 +578,22 @@
 				965EB4C12004B94500FF5ADB /* NSData+MKBase64.m in Sources */,
 				965EB4C22004B94500FF5ADB /* NSString+MKNetworkKitAdditions.m in Sources */,
 				965EB4372004B55800FF5ADB /* AppDelegate.m in Sources */,
+				9634D83020D3A562000423C0 /* PrizeView.m in Sources */,
 				965EB4B92004B94500FF5ADB /* JSONAPI.m in Sources */,
 				965EB4C32004B94500FF5ADB /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				965EB44F2004B5E800FF5ADB /* UIView+ZYDraggable.m in Sources */,
 				965EB4B42004B94500FF5ADB /* JSONModel.m in Sources */,
 				965EB4BC2004B94500FF5ADB /* MKNetworkOperation.m in Sources */,
 				965EB4AA2004B94500FF5ADB /* WXHomePage_AllAppHeaderView.m in Sources */,
+				96FEE52B208F7F6C00760CA3 /* ClickMenuVCtrl.m in Sources */,
 				965EB4B62004B94500FF5ADB /* JSONModelClassProperty.m in Sources */,
+				9634D82D20D39B41000423C0 /* RoundaboutView.m in Sources */,
 				965EB4B32004B94500FF5ADB /* JSONKeyMapper.m in Sources */,
 				965EB4B02004B94500FF5ADB /* SVIndefiniteAnimatedView.m in Sources */,
 				965EB4BF2004B94500FF5ADB /* NSObject+Helper.m in Sources */,
 				965EB4C02004B94500FF5ADB /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				965EB4C42004B94500FF5ADB /* NSDictionary+RequestEncoding.m in Sources */,
+				96FD968320634AED0099DA96 /* EmitterVCtrl.m in Sources */,
 				965EB4AD2004B94500FF5ADB /* SVRadialGradientLayer.m in Sources */,
 				965EB4A62004B94500FF5ADB /* WXHome_AllAppModel.m in Sources */,
 				965EB4C52004B94500FF5ADB /* NSAlert+MKNetworkKitAdditions.m in Sources */,
@@ -471,6 +601,7 @@
 				965EB4B82004B94500FF5ADB /* JSONHTTPClient.m in Sources */,
 				965EB4BD2004B94500FF5ADB /* Reachability.m in Sources */,
 				965EB4A82004B94500FF5ADB /* WXHome_AllAppCell.m in Sources */,
+				9634D82820D360B5000423C0 /* RoundaboutVCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,26 +733,33 @@
 		};
 		965EB4492004B55800FF5ADB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF80090FB77DF1A945DDF99C /* Pods-TestLight-OC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 75CW652CU7;
 				INFOPLIST_FILE = "TestLight-OC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nantian.TestLight-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0c85ca41-cac8-4b93-a92d-cf34a1d996eb";
+				PROVISIONING_PROFILE_SPECIFIER = ntdevelop;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		965EB44A2004B55800FF5ADB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24235A3DBCEF89E9A67FCFB2 /* Pods-TestLight-OC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "TestLight-OC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nantian.TestLight-OC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -1,0 +1,13 @@
+platform :ios, '9.0'
+
+use_frameworks!
+target 'TestLight-OC' do
+
+	pod 'Masonry'
+  	pod 'QMUIKit'
+  	pod 'YYText'
+	pod 'YYCategories'
+  	pod 'pop'
+    pod 'PopupKit'
+    pod 'ZZCircleProgress'
+end

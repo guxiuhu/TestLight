@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.sourceAry = @[@"拖动",@"UIColloectionView拖动排序"];
+    self.sourceAry = @[@"拖动",@"UIColloectionView拖动排序",@"粒子",@"点击展开菜单",@"转盘抽奖"];
 }
 
 - (void)didReceiveMemoryWarning {
