@@ -2,6 +2,15 @@
 
 #import <UIKit/UIKit.h>
 
+#ifndef QMUIKit_h
+#define QMUIKit_h
+
+static NSString * const QMUI_VERSION = @"2.8.1";
+
+#if __has_include("CAAnimation+QMUI.h")
+#import "CAAnimation+QMUI.h"
+#endif
+
 #if __has_include("CALayer+QMUI.h")
 #import "CALayer+QMUI.h"
 #endif
@@ -12,6 +21,10 @@
 
 #if __has_include("NSAttributedString+QMUI.h")
 #import "NSAttributedString+QMUI.h"
+#endif
+
+#if __has_include("NSCharacterSet+QMUI.h")
+#import "NSCharacterSet+QMUI.h"
 #endif
 
 #if __has_include("NSNumber+QMUI.h")
@@ -190,6 +203,10 @@
 #import "QMUILogNameManager.h"
 #endif
 
+#if __has_include("QMUILogger+QMUIConfigurationTemplate.h")
+#import "QMUILogger+QMUIConfigurationTemplate.h"
+#endif
+
 #if __has_include("QMUILogger.h")
 #import "QMUILogger.h"
 #endif
@@ -234,8 +251,24 @@
 #import "QMUIPopupContainerView.h"
 #endif
 
+#if __has_include("QMUIPopupMenuBaseItem.h")
+#import "QMUIPopupMenuBaseItem.h"
+#endif
+
+#if __has_include("QMUIPopupMenuButtonItem.h")
+#import "QMUIPopupMenuButtonItem.h"
+#endif
+
+#if __has_include("QMUIPopupMenuItemProtocol.h")
+#import "QMUIPopupMenuItemProtocol.h"
+#endif
+
 #if __has_include("QMUIPopupMenuView.h")
 #import "QMUIPopupMenuView.h"
+#endif
+
+#if __has_include("QMUIRuntime.h")
+#import "QMUIRuntime.h"
 #endif
 
 #if __has_include("QMUISearchBar.h")
@@ -316,6 +349,14 @@
 
 #if __has_include("QMUIToolbarButton.h")
 #import "QMUIToolbarButton.h"
+#endif
+
+#if __has_include("QMUIVisualEffectView.h")
+#import "QMUIVisualEffectView.h"
+#endif
+
+#if __has_include("QMUIWeakObjectContainer.h")
+#import "QMUIWeakObjectContainer.h"
 #endif
 
 #if __has_include("QMUIZoomImageView.h")
@@ -418,6 +459,10 @@
 #import "UITableView+QMUIStaticCell.h"
 #endif
 
+#if __has_include("UITableViewCell+QMUI.h")
+#import "UITableViewCell+QMUI.h"
+#endif
+
 #if __has_include("UITextField+QMUI.h")
 #import "UITextField+QMUI.h"
 #endif
@@ -437,3 +482,5 @@
 #if __has_include("UIWindow+QMUI.h")
 #import "UIWindow+QMUI.h"
 #endif
+
+#endif /* QMUIKit_h */

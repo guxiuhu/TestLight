@@ -64,7 +64,15 @@ static char kAssociatedObjectKey_qmuiDelegates;
     // 为这个 selector 创建一个 QMUIMultipleDelegates 容器
     NSString *delegateGetterKey = NSStringFromSelector(getter);
     if (!self.qmuimd_delegates[delegateGetterKey]) {
-        self.qmuimd_delegates[delegateGetterKey] = [[QMUIMultipleDelegates alloc] init];
+        objc_property_t prop = class_getProperty(self.class, delegateGetterKey.UTF8String);
+        QMUIPropertyDescriptor *property = [QMUIPropertyDescriptor descriptorWithProperty:prop];
+        if (property.isStrong) {
+            // strong property
+            self.qmuimd_delegates[delegateGetterKey] = [QMUIMultipleDelegates strongDelegates];
+        } else {
+            // weak property
+            self.qmuimd_delegates[delegateGetterKey] = [QMUIMultipleDelegates weakDelegates];
+        }
     }
     
     // 避免为某个 class 重复替换同一个方法的实现
@@ -115,6 +123,15 @@ static char kAssociatedObjectKey_qmuiDelegates;
         Method newMethod = class_getInstanceMethod(targetClass, newDelegateSetter);
         method_exchangeImplementations(originMethod, newMethod);
     }
+    
+    // 如果原来已经有 delegate，则将其加到新建的容器里
+    // @see https://github.com/QMUI/QMUI_iOS/issues/378
+    BeginIgnorePerformSelectorLeaksWarning
+    id originDelegate = [self performSelector:getter];
+    if (originDelegate && originDelegate != self.qmuimd_delegates[delegateGetterKey]) {
+        [self performSelector:originDelegateSetter withObject:originDelegate];
+    }
+    EndIgnorePerformSelectorLeaksWarning
 }
 
 - (void)qmui_removeDelegate:(id)delegate {

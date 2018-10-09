@@ -73,10 +73,6 @@ typedef NS_ENUM(NSInteger, QMUINavigationButtonPosition) {
     self.adjustsImageWhenHighlighted = NO;
     self.adjustsImageWhenDisabled = NO;
     
-    if (@available(iOS 11, *)) {
-        self.translatesAutoresizingMaskIntoConstraints = NO;// 打开这个才能让 iOS 11 下的 alignmentRectInsets 生效
-    }
-    
     switch (self.type) {
         case QMUINavigationButtonTypeNormal:
             break;
@@ -173,13 +169,8 @@ typedef NS_ENUM(NSInteger, QMUINavigationButtonPosition) {
         
         // 对于奇数大小的字号，不同 iOS 版本的偏移策略不同，统一一下
         if (self.titleLabel.font.pointSize / 2.0 > 0) {
-            if (@available(iOS 11, *)) {
-                insets.top = PixelOne;
-                insets.bottom = -PixelOne;
-            } else {
-                insets.top = -PixelOne;
-                insets.bottom = PixelOne;
-            }
+            insets.top = -PixelOne;
+            insets.bottom = PixelOne;
         }
     } else if (self.type == QMUINavigationButtonTypeImage) {
         // 图片类型的按钮，分别对最左、最右那个按钮调整 inset（这里与 UINavigationItem(QMUINavigationButton) 里的 position 赋值配合使用）
@@ -333,7 +324,13 @@ typedef NS_ENUM(NSInteger, QMUINavigationButtonPosition) {
             @selector(setLeftBarButtonItem:animated:),
             @selector(setLeftBarButtonItems:animated:),
             @selector(setRightBarButtonItem:animated:),
-            @selector(setRightBarButtonItems:animated:)
+            @selector(setRightBarButtonItems:animated:),
+            
+            // 如果被拦截，则 getter 也要返回被缓存的 item，否则会出现这个 bug：https://github.com/QMUI/QMUI_iOS/issues/362
+            @selector(leftBarButtonItem),
+            @selector(leftBarButtonItems),
+            @selector(rightBarButtonItem),
+            @selector(rightBarButtonItems)
         };
         for (NSUInteger index = 0; index < sizeof(selectors) / sizeof(SEL); index++) {
             SEL originalSelector = selectors[index];
@@ -349,9 +346,12 @@ typedef NS_ENUM(NSInteger, QMUINavigationButtonPosition) {
     } else {
         if (self.qmui_navigationBar && [self.qmui_navigationBar.delegate isKindOfClass:[UINavigationController class]]) {
             UINavigationController *navController = (UINavigationController *)self.qmui_navigationBar.delegate;
+            
+            QMUILog(@"UINavigationItem (QMUINavigationButton)", @"navigationController is %@, topViewController is %@, viewControllers is %@, willAppearByInteractivePopGestureRecognizer is %@, navigationControllerPopGestureRecognizerChanging is %@", navController, navController.topViewController, navController.viewControllers, StringFromBOOL(navController.topViewController.qmui_willAppearByInteractivePopGestureRecognizer), StringFromBOOL(navController.topViewController.qmui_navigationControllerPopGestureRecognizerChanging));
+            
             if (navController.topViewController.qmui_willAppearByInteractivePopGestureRecognizer && navController.topViewController.qmui_navigationControllerPopGestureRecognizerChanging) {
                 // 注意，判断条件里的 qmui_navigationControllerPopGestureRecognizerChanging 关键在于，它是在 viewWillAppear: 执行后才被置为 YES，而 QMUICommonViewController 是在 viewWillAppear: 里调用 setNavigationItems:，所以刚好过滤了这种场景。因为测试过，在 viewWillAppear: 里操作 items 是没问题的，但在那之后的操作就会有问题。
-                QMUILog(@"UINavigationItem (QMUINavigationButton)", @"拦截了一次可能产生顶部按钮混乱的操作，navigationController is %@, topViewController is %@", navController, navController.topViewController);
+                QMUILog(@"UINavigationItem (QMUINavigationButton)", @"拦截了一次可能产生顶部按钮混乱的操作");
                 return YES;
             }
         }
@@ -361,7 +361,7 @@ typedef NS_ENUM(NSInteger, QMUINavigationButtonPosition) {
 
 - (void)qmui_setLeftBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated {
     if ([self detectSetItemsWhenPopping]) {
-        self.tempLeftBarButtonItems = @[item];
+        self.tempLeftBarButtonItems = item ? @[item] : nil;
         return;
     }
     
@@ -421,7 +421,7 @@ typedef NS_ENUM(NSInteger, QMUINavigationButtonPosition) {
 
 - (void)qmui_setRightBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated {
     if ([self detectSetItemsWhenPopping]) {
-        self.tempRightBarButtonItems = @[item];
+        self.tempRightBarButtonItems = item ? @[item] : nil;
         return;
     }
     
@@ -447,6 +447,34 @@ typedef NS_ENUM(NSInteger, QMUINavigationButtonPosition) {
             items[i].qmui_navigationButton.buttonPosition = QMUINavigationButtonPositionNone;
         }
     }
+}
+
+- (UIBarButtonItem *)qmui_leftBarButtonItem {
+    if (self.tempLeftBarButtonItems) {
+        return self.tempLeftBarButtonItems.firstObject;
+    }
+    return [self qmui_leftBarButtonItem];
+}
+
+- (NSArray<UIBarButtonItem *> *)qmui_leftBarButtonItems {
+    if (self.tempLeftBarButtonItems) {
+        return self.tempLeftBarButtonItems;
+    }
+    return [self qmui_leftBarButtonItems];
+}
+
+- (UIBarButtonItem *)qmui_rightBarButtonItem {
+    if (self.tempRightBarButtonItems) {
+        return self.tempRightBarButtonItems.firstObject;
+    }
+    return [self qmui_rightBarButtonItem];
+}
+
+- (NSArray<UIBarButtonItem *> *)qmui_rightBarButtonItems {
+    if (self.tempRightBarButtonItems) {
+        return self.tempRightBarButtonItems;
+    }
+    return [self qmui_rightBarButtonItems];
 }
 
 - (UINavigationBar *)qmui_navigationBar {

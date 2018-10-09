@@ -36,10 +36,14 @@ extern NSString *const _Nonnull QMUIResourcesMainBundleName;
 
 @interface QMUIHelper (DynamicType)
 
-/// 返回当前contentSize的level，这个值可以在设置里面的“字体大小”查看，辅助功能里面有个“更大字体”可以设置更大的字体，不过这里我们这个接口将更大字体都做了统一，都返回“字体大小”里面最大值。
+/// 返回当前 contentSize 的 level，这个值可以在设置里面的“字体大小”查看，辅助功能里面有个“更大字体”可以设置更大的字体，不过这里我们这个接口将更大字体都做了统一，都返回“字体大小”里面最大值。
+/// Returns the level of contentSize
+/// The value can be set in Settings - Display & Brightness - Text Size as well as in General - Accessibility - Larger Text
+/// This method returns the value set by user or the maximum value in Text Size, whichever is smaller
 + (nonnull NSNumber *)preferredContentSizeLevel;
 
-/// 设置当前cell的高度，heights是有七个数值的数组，对于不支持的iOS版本，则选择中间的值返回。
+/// 设置当前 cell 的高度，heights 是有七个数值的数组，对于不支持的iOS版本，则选择中间的值返回。
+/// Sets height of the cell; Heights consist of 7 numberic values; Returns the middle value on legacy iOS versions.
 + (CGFloat)heightForDynamicTypeCell:(nonnull NSArray *)heights;
 @end
 
@@ -47,7 +51,8 @@ extern NSString *const _Nonnull QMUIResourcesMainBundleName;
 @interface QMUIHelper (Keyboard)
 
 /**
- * 判断当前App里的键盘是否升起，默认为NO
+ * 判断当前 App 里的键盘是否升起，默认为 NO
+ * Returns the visibility of the keybord. Default value is NO.
  */
 + (BOOL)isKeyboardVisible;
 
@@ -119,26 +124,51 @@ extern NSString *const _Nonnull QMUIResourcesMainBundleName;
 
 @interface QMUIHelper (Device)
 
++ (NSString *)deviceModel;
+
 + (BOOL)isIPad;
 + (BOOL)isIPadPro;
 + (BOOL)isIPod;
 + (BOOL)isIPhone;
 + (BOOL)isSimulator;
 
+/// 是否全面屏类型的设备
++ (BOOL)isNotchedScreen;
+
+/// 将屏幕分为普通和紧凑两种，这个方法用于判断是否为普通屏幕
++ (BOOL)isRegularScreen;
+
+/// iPhone XS Max
++ (BOOL)is65InchScreen;
+
+/// iPhone XR
++ (BOOL)is61InchScreen;
+
+/// iPhone X/XS
 + (BOOL)is58InchScreen;
+
+/// iPhone 8 Plus
 + (BOOL)is55InchScreen;
+
+/// iPhone 8
 + (BOOL)is47InchScreen;
+
+/// iPhone 5
 + (BOOL)is40InchScreen;
+
+/// iPhone 4
 + (BOOL)is35InchScreen;
 
++ (CGSize)screenSizeFor65Inch;
++ (CGSize)screenSizeFor61Inch;
 + (CGSize)screenSizeFor58Inch;
 + (CGSize)screenSizeFor55Inch;
 + (CGSize)screenSizeFor47Inch;
 + (CGSize)screenSizeFor40Inch;
 + (CGSize)screenSizeFor35Inch;
 
-// 用于获取 iPhoneX 安全区域的 insets
-+ (UIEdgeInsets)safeAreaInsetsForIPhoneX;
+// 用于获取 iPhone X 系列全面屏手机的安全区域的 insets
++ (UIEdgeInsets)safeAreaInsetsForDeviceWithNotch;
 
 /// 判断当前设备是否高性能设备，只会判断一次，以后都直接读取结果，所以没有性能问题
 + (BOOL)isHighPerformanceDevice;

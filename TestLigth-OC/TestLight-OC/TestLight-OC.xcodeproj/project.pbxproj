@@ -512,7 +512,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TestLight-OC/Pods-TestLight-OC-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TestLight-OC/Pods-TestLight-OC-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupKit/PopupKit.framework",
 				"${BUILT_PRODUCTS_DIR}/QMUIKit/QMUIKit.framework",
@@ -533,7 +533,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestLight-OC/Pods-TestLight-OC-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestLight-OC/Pods-TestLight-OC-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		694DBB590C44414B59623BC8 /* [CP] Check Pods Manifest.lock */ = {

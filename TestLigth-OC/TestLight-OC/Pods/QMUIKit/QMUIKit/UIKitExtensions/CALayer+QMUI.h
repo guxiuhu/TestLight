@@ -12,6 +12,11 @@
 @interface CALayer (QMUI)
 
 /**
+ 暂停/恢复当前 layer 上的所有动画
+ */
+@property(nonatomic, assign) BOOL qmui_pause;
+
+/**
  *  把某个 sublayer 移动到当前所有 sublayers 的最后面
  *  @param sublayer 要被移动的 layer
  *  @warning 要被移动的 sublayer 必须已经添加到当前 layer 上
@@ -39,8 +44,7 @@
  * @param isHorizontal 是否横向，因为画虚线的缘故，需要指定横向或纵向，横向是 YES，纵向是 NO。
  * 注意：暂不支持 dashPhase 和 dashPattens 数组设置，因为这些都定制性太强，如果用到则自己调用系统方法即可。
  */
-
-+ (CAShapeLayer *)qmui_seperatorDashLayerWithLineLength:(NSInteger)lineLength
++ (CAShapeLayer *)qmui_separatorDashLayerWithLineLength:(NSInteger)lineLength
                                             lineSpacing:(NSInteger)lineSpacing
                                               lineWidth:(CGFloat)lineWidth
                                               lineColor:(CGColorRef)lineColor
@@ -53,9 +57,9 @@
  * 其中，InHorizon 是横向；InVertical 是纵向。
  
  */
-+ (CAShapeLayer *)qmui_seperatorDashLayerInHorizontal;
++ (CAShapeLayer *)qmui_separatorDashLayerInHorizontal;
 
-+ (CAShapeLayer *)qmui_seperatorDashLayerInVertical;
++ (CAShapeLayer *)qmui_separatorDashLayerInVertical;
 
 /**
  * 产生一个适用于做通用分隔线的 layer，高度为 PixelOne，默认会移除动画，并且背景色用 UIColorSeparator

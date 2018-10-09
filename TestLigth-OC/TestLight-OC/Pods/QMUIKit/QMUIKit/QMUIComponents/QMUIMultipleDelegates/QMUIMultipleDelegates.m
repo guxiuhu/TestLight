@@ -10,18 +10,27 @@
 #import "NSPointerArray+QMUI.h"
 #import <objc/runtime.h>
 
+@interface QMUIMultipleDelegates ()
+
+@property(nonatomic, strong, readwrite) NSPointerArray *delegates;
+@end
+
 @implementation QMUIMultipleDelegates
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        _delegates = [NSPointerArray weakObjectsPointerArray];
-    }
-    return self;
++ (instancetype)weakDelegates {
+    QMUIMultipleDelegates *delegates = [[QMUIMultipleDelegates alloc] init];
+    delegates.delegates = [NSPointerArray weakObjectsPointerArray];
+    return delegates;
+}
+
++ (instancetype)strongDelegates {
+    QMUIMultipleDelegates *delegates = [[QMUIMultipleDelegates alloc] init];
+    delegates.delegates = [NSPointerArray strongObjectsPointerArray];
+    return delegates;
 }
 
 - (void)addDelegate:(id)delegate {
-    if (![self.delegates qmui_containsPointer:(__bridge void *)delegate] && delegate != self) {
+    if (![self containsDelegate:delegate] && delegate != self) {
         [self.delegates addPointer:(__bridge void *)delegate];
     }
 }
@@ -39,6 +48,10 @@
     for (NSInteger i = self.delegates.count - 1; i >= 0; i--) {
         [self.delegates removePointerAtIndex:i];
     }
+}
+
+- (BOOL)containsDelegate:(id)delegate {
+    return [self.delegates qmui_containsPointer:(__bridge void *)delegate];
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
@@ -85,8 +98,14 @@
         if (class_respondsToSelector(self.class, aSelector)) {
             return YES;
         }
+        
+        // 对 QMUIMultipleDelegates 额外处理的解释在这里：https://github.com/QMUI/QMUI_iOS/issues/357
+        BOOL delegateCanRespondToSelector = [delegate isKindOfClass:self.class] ? [delegate respondsToSelector:aSelector] : class_respondsToSelector(((NSObject *)delegate).class, aSelector);
+        
         // 判断 qmui_delegatesSelf 是为了解决这个 issue：https://github.com/QMUI/QMUI_iOS/issues/346
-        if (class_respondsToSelector(((NSObject *)delegate).class, aSelector) && !((NSObject *)delegate).qmui_delegatesSelf) {
+        BOOL isDelegateSelf = ((NSObject *)delegate).qmui_delegatesSelf;
+        
+        if (delegateCanRespondToSelector && !isDelegateSelf) {
             return YES;
         }
     }
